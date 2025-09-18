@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import { View } from 'react-native'
-import { Text } from '@rneui/themed'
+import { View, Text } from 'react-native'
 import { onValue, ref } from "firebase/database";
-import { db } from './firebaseConfig'
+import { db } from './others/firebaseConfig'
 
 
 

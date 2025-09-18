@@ -1,17 +1,32 @@
-import { initializeApp } from "firebase/app";
+import { initializeApp, getApps } from "firebase/app";
 import { getDatabase } from "firebase/database";
+import { getAuth, initializeAuth, getReactNativePersistence } from "firebase/auth";
+import ReactNativeAsyncStorage from '@react-native-async-storage/async-storage';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyD2LaHxtXtwJNsaQ3Lk99qe5V-WK2ojEV0",
-  authDomain: "urdu-duniya-news.firebaseapp.com",
-  databaseURL: "https://urdu-duniya-news-default-rtdb.firebaseio.com",
-  projectId: "urdu-duniya-news",
-  storageBucket: "urdu-duniya-news.appspot.com",
-  messagingSenderId: "446034365752",
-  appId: "1:446034365752:web:fbb85ab0a524d2be1305cd"
+  apiKey: "AIzaSyDpur8-k34SDj15Gx5zbeclAndYjfQk6FM",
+  authDomain: "apps-773b4.firebaseapp.com",
+  databaseURL: "https://apps-773b4-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "apps-773b4",
+  storageBucket: "apps-773b4.firebasestorage.app",
+  messagingSenderId: "1005628271813",
+  appId: "1:1005628271813:web:29538a33840fac264514ac"
 };
 
-const app = initializeApp(firebaseConfig);
-const db = getDatabase();
+// Initialize Firebase App
+const app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApps()[0];
 
-export { db, app }
+// Initialize Database
+const db = getDatabase(app);
+
+// Initialize Auth with AsyncStorage persistence for React Native
+let auth;
+// try {
+//   auth = getAuth(app);
+// } catch (error) {
+//   auth = initializeAuth(app, {
+//     persistence: getReactNativePersistence(ReactNativeAsyncStorage)
+//   });
+// }
+
+export { db, app, auth }

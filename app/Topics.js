@@ -1,8 +1,7 @@
 import { onValue, ref } from 'firebase/database'
 import React, { useEffect, useState } from 'react'
 import { db } from '../others/firebaseConfig'
-import { FlatList } from 'react-native'
-import { Text } from '@rneui/themed'
+import { FlatList, Text } from 'react-native'
 
 export default function Topics() {
   const [topics, setTopics] = useState([])

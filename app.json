@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "expo1",
-    "slug": "expo1",
+    "name": "Haysky Demo",
+    "slug": "haysky-demo",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -15,25 +15,51 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "associatedDomains": [
+        "applinks:demo.haysky.com"
+      ]
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.haysky.demo",
+      "intentFilters": [
+        {
+          "action": "VIEW",
+          "autoVerify": true,
+          "data": [
+            {
+              "scheme": "https",
+              "host": "demo.haysky.com"
+            }
+          ],
+          "category": [
+            "BROWSABLE",
+            "DEFAULT"
+          ]
+        }
+      ]
     },
     "web": {
       "output": "single",
       "bundler": "metro",
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/icon.png"
     },
     "experiments": {
-      "baseUrl": "/expo1"
+      "baseUrl": "/haysky-demo"
     },
     "plugins": [
       "expo-router"
     ],
-    "scheme": "expo1"
+    "scheme": "haysky-demo",
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "4b3c8886-647c-4328-a0db-f7a9cc9b30ff"
+      }
+    }
   }
 }
